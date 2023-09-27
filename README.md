@@ -12,6 +12,14 @@ This is a dynamic style CSS tool
 
 ---
 
+### 使用先安装:
+
+```npmignore
+npm i wdjcss
+```
+
+
+
 ### 示例:
 
 我们通过向createStyle()传入一个`style`dom元素,来对css进行操作
@@ -79,10 +87,6 @@ myref.current.style.height = height+"px"
 当我们使用了js操作内联样式,就意味着它不会被后面的元素覆盖.在后面有人用到组件时操作非常不方便
 
 也不容易进行管理
-
-
-
-
 
 也许只有我有问题或者vue和react中有同样的方法我却没有发现
 
