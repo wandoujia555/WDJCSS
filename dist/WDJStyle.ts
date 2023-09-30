@@ -7,7 +7,7 @@ export class WDJStyle{
     CSSProperties:CSSProperties
     CSSRule:CSSRule
     public get style(){
-        const myCSSRule:MyCSSRule = (this.CSSRule as any).style as unknown as MyCSSRule;
+        const myCSSRule:CSSStyleDeclaration = (this.CSSRule as any).style as CSSStyleDeclaration;
         return myCSSRule;
     }
     public get CSSRuleText() : string {

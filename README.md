@@ -12,13 +12,11 @@ This is a dynamic style CSS tool
 
 ---
 
-### 使用先安装:
+### 安装:
 
 ```npmignore
 npm i wdjcss
 ```
-
-
 
 ### 示例:
 
@@ -37,6 +35,7 @@ npm i wdjcss
 ...
 
 <script>
+import {createStyle} from "wdjcss"
 //首先在获取一个style标签作为我们的操作对象
 const myStyle = createStyle(document.getElementById("exex"))
 //然后
@@ -58,6 +57,29 @@ myStyle.alterWDJStyle(".logo",{
 </script>
 ```
 
+## 操作css变量
+
+我们也可以操作css变量
+
+```ts
+myStyle.alterWDJStyle(".theme",{
+    backgroundColor:"red",
+    ['--theme-color' as any]: 'black',
+    ['--width' as any]: '20px',
+})
+myStyle.WDJStyles[".theme"].style.setProperty('--theme-color','red')
+myStyle.WDJStyles[".theme"].style.setProperty('--width',40+'px')
+
+```
+
+
+
+
+
+
+
+
+
 ---
 
 ##### 解决什么问题?
@@ -74,8 +96,7 @@ const style_: React.CSSProperties = {
 };
 style={style_}
 //或者直接这样
-height:height+"px"
-<div style={{height:"20px"}}></div>
+<div style={{height:height+'px'}}></div>
 //又或者在某个地方用了dom元素
 myref.current.style.height = height+"px"
 ```
@@ -90,6 +111,8 @@ myref.current.style.height = height+"px"
 
 也许只有我有问题或者vue和react中有同样的方法我却没有发现
 
-花了一个下午做出来就当是练手
+花了一个两节课做出来就当是练手
+
+老师讲老师的我写我的,大学生上课主打一个陪伴
 
 ---
